@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    h3= details.parkName
+    div
+        ul
+            li Location: #{details.city}, #{details.provinceState} #{details.country}
+            li Opened: #{details.opened}
+            li Size: #{details.size}
+    div
+        p= details.description
+    div(class="mr-2")
+        a(class="mr-2 btn btn-outline-warning" href=`/park/edit/${details.id}` role="button") Edit
+        a(class="mr-2 btn btn-outline-danger" href=`/park/delete/${details.id}` role="button") Delete
+        a(class="mr-2 btn btn-outline-info" href="/parks" role="button") Return to List
